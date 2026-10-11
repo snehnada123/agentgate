@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: agentgate-research
+    runtime: python
+    plan: free
+    region: virginia
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: agentgate-research-db
+          property: connectionString
+databases:
+  - name: agentgate-research-db
+    plan: free
+    region: virginia

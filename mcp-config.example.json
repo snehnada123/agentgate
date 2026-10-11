@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "agentgate": {
+      "command": "C:/path/to/agentgate/.venv/Scripts/python.exe",
+      "args": [
+        "C:/path/to/agentgate/mcp_server.py"
+      ]
+    }
+  }
+}
